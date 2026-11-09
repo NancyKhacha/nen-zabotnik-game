@@ -118,7 +118,7 @@
       id: 'smclinic', room: 'living', kind: 'brand', delta: 15,
       sticker: 'assets/stickers/living-calendar.webp', x: 31.5, y: 45.5, w: 17, rot: -3,
       brand: 'СМ-Клиника', product: 'Чекап «Женское здоровье»',
-      photo: null, // в брифе только логотип (Drive закрыт), сайт клиники за защитой от ботов — ждем файл
+      photo: 'assets/packshots/smclinic.svg', photoFit: 'logo', // логотип клиники, прислала Анастасия 09.11 (у чекапа нет упаковки)
       text: 'Мама записалась на чекап, хотя обычно записывает к врачам только детей. Программу «Женское здоровье» в «СМ-Клиника» проходят за два дня в одном медцентре, там же делают УЗИ и МРТ молочных желез и маммографию.',
       disclaimer: 'Имеются противопоказания. Необходимо проконсультироваться со специалистом.', // обязательная строка, мелким шрифтом
       button: 'Выбрать чекап',
@@ -418,7 +418,7 @@
 
     if (it.kind === 'brand') {
       body.innerHTML = `
-        <div class="packshot${it.photoFit === 'cover' ? ' packshot--cover' : ''}${it.photo ? '' : ' packshot--empty'}">${it.photo
+        <div class="packshot${it.photoFit ? ` packshot--${it.photoFit}` : ''}${it.photo ? '' : ' packshot--empty'}">${it.photo
           ? `<img src="${it.photo}" alt="${esc(it.product)}">`
           : `здесь будет фото ${esc(it.brand)}`}</div>
         <p class="brand-line"><b>${esc(it.brand)}</b> ${esc(it.product)}</p>
@@ -454,7 +454,7 @@
     const f = FINALS.find((x) => v >= x.min);
     const shop = ITEMS.filter((it) => it.kind === 'brand').map((it) => `
       <article class="shop__item">
-        <div class="shop__img${it.photo && it.photoFit === 'cover' ? ' shop__img--cover' : ''}"><img src="${it.photo || it.sticker}" alt="" loading="lazy"></div>
+        <div class="shop__img${it.photo && it.photoFit ? ` shop__img--${it.photoFit}` : ''}"><img src="${it.photo || it.sticker}" alt="" loading="lazy"></div>
         <div class="shop__body">
           <p class="shop__brand"><b>${esc(it.brand)}</b> ${esc(it.product)}</p>
           ${it.promo ? `<p class="shop__promo">${esc(nbsp(it.promo))}</p>` : ''}
