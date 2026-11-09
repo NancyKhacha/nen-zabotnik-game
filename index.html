@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <title>Помоги маме прийти в себя — игра НЭН</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=e0cde5cb">
+</head>
+<body>
+  <!-- Картинка комнаты на весь экран. world — сама картинка 2:3, наклейки и герои стоят в % от нее -->
+  <div class="scene" id="scene">
+    <img class="scene-blur" id="sceneBlur" alt="" aria-hidden="true">
+    <div class="world" id="world">
+      <img class="scene-bg" id="sceneBg" alt="">
+    </div>
+  </div>
+
+  <!-- Плашки поверх картинки -->
+  <header class="plate plate--top">
+    <img class="logo" src="assets/nen-logo-mono.svg" alt="НЭН">
+    <span class="title" id="gameTitle">Помоги маме прийти в&nbsp;себя</span>
+    <div class="battery" id="battery" aria-live="polite">
+      <div class="battery-body" id="batteryBars"></div>
+      <div class="battery-cap"></div>
+      <span class="battery-num" id="batteryNum">2%</span>
+    </div>
+  </header>
+
+  <!-- Выход в коридор из любой комнаты -->
+  <button class="backbtn" id="toHall" type="button" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Коридор
+  </button>
+
+  <!-- Обложка: только крупное название -->
+  <div class="cover-head" id="coverHead" hidden>
+    <img class="cover-head__logo" src="assets/nen-logo-mono.svg" alt="НЭН">
+    <h1 class="cover-head__title">Помоги маме прийти в&nbsp;себя</h1>
+  </div>
+
+  <!-- Обложка и правила: плашка поверх коридора -->
+  <section class="intro" id="intro" hidden>
+    <div class="intro__card" id="introCard"></div>
+  </section>
+
+  <!-- Название комнаты на экране не показываем, только для экранных дикторов -->
+  <h1 class="sr-only" id="roomName">Ванная</h1>
+
+  <!-- Финал: поверх комнаты, под шапкой с батарейкой -->
+  <section class="final" id="final" hidden aria-label="Итог вечера">
+    <div class="final__card" id="finalCard"></div>
+  </section>
+
+  <div class="sheet-wrap" id="sheetWrap" hidden>
+    <div class="sheet-backdrop" data-close></div>
+    <section class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle">
+      <button class="sheet-close" id="sheetClose" type="button" data-close aria-label="Закрыть">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round"/></svg>
+      </button>
+      <h2 class="sheet-title has-close" id="sheetTitle"></h2>
+      <div class="sheet-body" id="sheetBody"></div>
+    </section>
+  </div>
+
+  <script src="app.js?v=e0cde5cb"></script>
+</body>
+</html>
