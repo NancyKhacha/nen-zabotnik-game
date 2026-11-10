@@ -207,7 +207,6 @@ html, body {
 }
 
 .battery { display: flex; align-items: center; gap: 3px; flex: none; }
-.battery-label { margin-right: 6px; font-size: 13px; font-weight: 800; color: var(--muted); white-space: nowrap; }
 .battery-body {
   display: flex;
   gap: 1.5px;
