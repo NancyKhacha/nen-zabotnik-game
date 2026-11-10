@@ -394,7 +394,16 @@ body.sheet-open .plate--top { z-index: 21; }   /* шапка видна над �
 .final__title { margin: 4px 0 8px; font-size: 24px; font-weight: 900; line-height: 1.15; }
 .final__text { margin: 0 0 16px; font-size: 16px; line-height: 1.45; font-weight: 600; }
 
-.final__again { margin-top: 18px; }
+/* «Пройти еще раз»: свой цвет, не как синие кнопки брендов, и закреплена внизу экрана, пока листают витрину */
+.final__again {
+  position: sticky;
+  bottom: calc(10px + var(--safe-b));
+  z-index: 2;
+  margin-top: 18px;
+  background: #FFD23F;
+  color: var(--ink);
+  box-shadow: 0 6px 20px rgba(42, 36, 32, .28);
+}
 .final__h { margin: 22px 0 10px; font-size: 19px; font-weight: 900; line-height: 1.2; }
 /* Витрина без карточек-подложек: товары на белом, между ними тонкая линия */
 .shop { display: grid; }
