@@ -207,6 +207,7 @@ html, body {
 }
 
 .battery { display: flex; align-items: center; gap: 3px; flex: none; }
+.battery-label { margin-right: 6px; font-size: 13px; font-weight: 800; color: var(--muted); white-space: nowrap; }
 .battery-body {
   display: flex;
   gap: 1.5px;
@@ -424,6 +425,29 @@ body.sheet-open .plate--top { z-index: 21; }   /* шапка видна над �
   .shop .btn--sm { display: block; width: 100%; padding: 11px 14px; font-size: 15px; text-align: center; margin-top: 8px; }
 }
 
+/* ===== Подсказка в комнате: одна строка под кнопкой «Коридор», гаснет сама ===== */
+.hint {
+  position: fixed;
+  z-index: 5;
+  top: calc(var(--head-h, 66px) + 70px + var(--safe-t));
+  left: 50%;
+  max-width: calc(100% - 20px);
+  padding: 9px 14px;
+  border-radius: 999px;
+  background: var(--ink);
+  color: #fff;
+  font-size: clamp(12.5px, 3.6vw, 14px);   /* одна строка и на 360 px */
+  font-weight: 800;
+  white-space: nowrap;
+  box-shadow: 0 4px 14px rgba(42, 36, 32, .2);
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -6px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+.hint[hidden] { display: none; }
+.hint.is-on { opacity: 1; transform: translate(-50%, 0); }
+
 /* ===== Кнопка «Коридор» ===== */
 .backbtn {
   position: fixed;
@@ -536,6 +560,7 @@ body.sheet-open .plate--top { z-index: 21; }   /* шапка видна над �
   font-weight: 600;
   counter-increment: r;
 }
+.rules mark { padding: 0 3px; border-radius: 4px; background: #FFE066; color: inherit; font-weight: 900; }
 .rules li::before {
   content: counter(r);
   position: absolute;

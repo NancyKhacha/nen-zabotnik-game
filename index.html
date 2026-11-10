@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2d8d40f5">
+  <link rel="stylesheet" href="styles.css?v=6596b392">
 </head>
 <body>
   <!-- Картинка комнаты на весь экран. world — сама картинка 2:3, наклейки и герои стоят в % от нее -->
@@ -24,11 +24,16 @@
     <img class="logo" src="assets/nen-logo-mono.svg" alt="НЭН">
     <span class="title" id="gameTitle">Помоги маме прийти в&nbsp;себя</span>
     <div class="battery" id="battery" aria-live="polite">
+      <!-- подпись: без нее батарейку принимали за заряд телефона (чат ТЕХПОДДЕРЖКА, 09.11) -->
+      <span class="battery-label">Заряд мамы</span>
       <div class="battery-body" id="batteryBars"></div>
       <div class="battery-cap"></div>
       <span class="battery-num" id="batteryNum">2%</span>
     </div>
   </header>
+
+  <!-- Подсказка в комнате, пока не сделан первый выбор -->
+  <div class="hint" id="roomHint" hidden>Выберите одну вещь: передумать не получится</div>
 
   <!-- Выход в коридор из любой комнаты -->
   <button class="backbtn" id="toHall" type="button" hidden>
@@ -66,6 +71,6 @@
     </section>
   </div>
 
-  <script src="app.js?v=2d8d40f5"></script>
+  <script src="app.js?v=6596b392"></script>
 </body>
 </html>

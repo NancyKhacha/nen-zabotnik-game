@@ -260,7 +260,7 @@
     lead: 'Мама только что вернулась домой с двумя детьми, четырьмя пакетами, сменкой, самокатом (самокат не ее, но несет его, конечно, она) и последними 2% сил. Где-то в квартире есть все, что поможет ей немного восстановиться. Главное, не потратить остатки энергии по дороге.',
     steps: [
       'Выбирайте любую комнату: мама все равно нужна везде.',
-      'В каждой комнате выберите одну вещь. Передумать не получится, вечер не перематывается.',
+      'В каждой комнате выберите *одну вещь*. Передумать не получится, вечер не перематывается.',
       'Одни вещи заряжают маму, другие снова тратят ее на всех вокруг. Рабочий чат, например, только притворяется безобидным.',
       'Когда мама обойдет все пять комнат, станет ясно, в каком состоянии она дотянула до ночи.'
     ],
@@ -389,6 +389,7 @@
     scene.classList.add('is-chosen');
     scene.querySelector(`[data-id="${it.id}"]`).classList.add('is-picked');
     renderBattery();
+    showHint(false);
     openSheet(it);
     flashBattery(it.delta);
   }
@@ -505,7 +506,7 @@
       card.innerHTML = `
         <h2 class="intro__title intro__title--sm">${esc(RULES.title)}</h2>
         <p class="intro__text">${esc(nbsp(RULES.lead))}</p>
-        <ol class="rules">${RULES.steps.map((t) => `<li>${esc(nbsp(t))}</li>`).join('')}</ol>
+        <ol class="rules">${RULES.steps.map((t) => `<li>${mark(esc(nbsp(t)))}</li>`).join('')}</ol>
         <button class="btn" type="button" data-go="hub">${esc(RULES.button)}</button>`;
     }
   }
@@ -519,8 +520,20 @@
     if (!intro.hidden) renderIntro();
     document.body.dataset.view = v;
     $('toHall').hidden = v !== 'room';
+    showHint(v === 'room' && !Object.keys(state.done).length);
     history.replaceState(null, '', v === 'room' ? `#${roomId}` : v === 'cover' ? location.pathname + location.search : `#${v}`);
   }
+  let hintTimer;
+  function showHint(on) {
+    const el = $('roomHint');
+    clearTimeout(hintTimer);
+    el.classList.remove('is-on');
+    if (!on) { el.hidden = true; return; }
+    el.hidden = false;
+    requestAnimationFrame(() => el.classList.add('is-on'));
+    hintTimer = setTimeout(() => el.classList.remove('is-on'), 4200);
+  }
+
   function go(v, roomId) {
     scene.classList.add('is-switching');
     setTimeout(() => {
@@ -533,6 +546,9 @@
     if (b) go(b.dataset.go);
   });
   $('toHall').addEventListener('click', () => go('hub'));
+
+  // *слова* в тексте правил — выделение маркером
+  const mark = (s) => s.replace(/\*(.+?)\*/g, '<mark>$1</mark>');
 
   function esc(s) {
     return String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
