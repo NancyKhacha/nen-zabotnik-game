@@ -6,7 +6,8 @@
   const ITEMS = [
     {
       id: 'solzao', room: 'bath', kind: 'brand', delta: 15,
-      sticker: 'assets/stickers/bath-gel.webp', x: 45, y: 58, w: 9.5, rot: 4,
+      ad: 'Реклама, ООО «СПЛАТ» (ИНН 7703539871), erid: 2W5zFHkr5YN',
+      sticker: 'assets/stickers/bath-gel-v2.webp', x: 45, y: 58, w: 8.6, rot: 4, // флакон по форме как у Solzao (правка 11.11)
       brand: 'Solzao', product: 'Гель для душа Sugar Head',
       photo: 'assets/packshots/solzao.webp', // Яндекс Диск из брифа, Sugar Head 400 мл фронтально
       text: 'Мама зашла в душ и пять минут делала вид, что не слышит стук в дверь. Ещё бы! Гель Solzão пахнет жжёной карамелью, бразильским орехом и абсолютным счастьем. С ним даже обычный душ превращается в маленький побег от повседневности — туда, где сладко, беззаботно и никуда не нужно спешить.',
@@ -16,6 +17,7 @@
     },
     {
       id: 'artfact', room: 'bath', kind: 'brand', delta: 15,
+      ad: 'Реклама, ООО «КЕАРЛИ ГРУПП» (ИНН 9715397054), erid: 2W5zFGGtp5x',
       sticker: 'assets/stickers/bath-box.webp', x: 58.5, y: 52.3, w: 18, rot: -3,
       brand: 'ART&FACT. x НЭН', product: 'Набор «Ну и денек!»',
       photo: 'assets/packshots/artfact.webp', // мокап из брифа: коробка и все средства целиком, как просил бренд
@@ -44,6 +46,7 @@
     /* ----- Кухня ----- */
     {
       id: 'biomio', room: 'kitchen', kind: 'brand', delta: 15,
+      ad: 'Реклама, ООО «СПЛАТ» (ИНН 7703539871), erid: 2W5zFG3WEhQ',
       sticker: 'assets/stickers/kitchen-tablets.webp', x: 36.5, y: 54.6, w: 14.5, rot: -4,
       brand: 'BioMio', product: 'Таблетки для посудомоечной машины',
       photo: 'assets/packshots/biomio.webp', // Яндекс Диск из брифа, ракурс 3/4
@@ -54,7 +57,8 @@
     },
     {
       id: 'flowwow', room: 'kitchen', kind: 'brand', delta: 15,
-      sticker: 'assets/stickers/kitchen-cupcakes.webp', x: 80.5, y: 57.3, w: 15.5, rot: 3,
+      ad: 'Реклама, ООО «ФЛАУВАУ» (ИНН 9702020445), erid: 2W5zFJ7evpa',
+      sticker: 'assets/stickers/kitchen-cupcakes.webp', x: 81, y: 60.8, w: 15.5, rot: 3,
       brand: 'Флаувау', product: 'Цветочные капкейки',
       photo: 'assets/packshots/flowwow.webp', photoFit: 'cover', // фото от Анастасии 09.11: не упаковка на белом, а кадр — показываем во всю ширину
       text: 'Маме подарили цветочные капкейки, и их, в отличие от букета, можно съесть. На Флаувау легко подобрать десерт с ее любимой начинкой, чтобы сделать чаепитие еще приятнее.',
@@ -80,6 +84,7 @@
     /* ----- Спальня ----- */
     {
       id: 'divan', room: 'bedroom', kind: 'brand', delta: 15,
+      ad: 'Реклама, ООО «Диван Трейд» (ИНН 7726457128), erid: 2W5zFHnH3VL',
       // кровать вырезана из самого фона и стоит ровно поверх нарисованной, поэтому не качается (still)
       sticker: 'assets/stickers/bedroom-bed.webp', x: 49.66, y: 83.2, w: 73.54, rot: 0, still: true,
       brand: 'divan.ru', product: 'Кровать «Суна»',
@@ -91,9 +96,10 @@
     },
     {
       id: 'bago', room: 'bedroom', kind: 'brand', delta: 15,
-      sticker: 'assets/stickers/bedroom-diffuser.webp', x: 77, y: 50.7, w: 9.5, rot: 3,
+      ad: 'Реклама, ООО «ХОУМ АКСЕССОРИЗ» (ИНН 7743613031), erid: 2W5zFJ7hHC6',  // ИНН как в доке клиента, у BAGO он совпадает с СМ-Клиникой — уточнить
+      sticker: 'assets/stickers/bedroom-diffuser-v2.webp', x: 77, y: 50.9, w: 12, rot: 3, // кубический флакон BAGO (правка 11.11)
       brand: 'BAGO home', product: 'Диффузор «Свежий хлопок», 50 мл',
-      photo: 'assets/packshots/bago.webp', photoFit: 'cover', // фото с Яндекс Диска из брифа
+      photo: 'assets/packshots/bago.webp', // фото на белом из папки бренда (правка 11.11)
       text: 'Белье мама так и не развесила, но в спальне все равно пахнет свежими простынями. У диффузора BAGO home аромат хлопка, лилии и амбры, а 50 мл хватает на четыре-шесть недель в комнате 5–15 м².',
       button: 'Купить диффузор',
       url: 'https://wildberries.ru/catalog/0/search.aspx?search=WW1275842'
@@ -117,7 +123,8 @@
     /* ----- Гостиная ----- */
     {
       id: 'smclinic', room: 'living', kind: 'brand', delta: 15,
-      sticker: 'assets/stickers/living-calendar.webp', x: 31.5, y: 45.5, w: 17, rot: -3,
+      ad: 'Реклама, ООО «СМ-КЛИНИКА» (ИНН 7743613031), erid: 2W5zFGGsUAE',
+      sticker: 'assets/stickers/living-checkup.webp', x: 31, y: 46, w: 18.5, rot: -4, // сердце со стетоскопом вместо календаря: «календарь не тянет нажать» (правка 11.11)
       brand: 'СМ-Клиника', product: 'Чекап «Женское здоровье»',
       photo: 'assets/packshots/smclinic.svg', photoFit: 'logo', // логотип клиники, прислала Анастасия 09.11 (у чекапа нет упаковки)
       text: 'Мама записалась на чекап, хотя обычно записывает к врачам только детей. Программу «Женское здоровье» в «СМ-Клиника» проходят за два дня в одном медцентре, там же делают УЗИ и МРТ молочных желез и маммографию.',
@@ -127,6 +134,7 @@
     },
     {
       id: 'avenir', room: 'living', kind: 'brand', delta: 15,
+      ad: 'Реклама, ООО «БЭЙБИ ОПТ ГРУП» (ИНН 7801623948), erid: 2W5zFGB2tjk',
       sticker: 'assets/stickers/living-crochet.webp', x: 63, y: 61, w: 15.5, rot: 4,
       brand: 'Avenir', product: 'Набор для вязания крючком',
       photo: 'assets/packshots/avenir.webp', // набор на белом фоне из папки бренда (Nextcloud из брифа)
@@ -136,11 +144,12 @@
     },
     {
       id: 'makebug', room: 'living', kind: 'brand', delta: 15,
+      ad: 'Реклама, ООО «БЭЙБИ ОПТ ГРУП» (ИНН 7801623948), erid: 2W5zFJqDc3c',
       sticker: 'assets/stickers/living-orchid.webp', x: 42, y: 67.4, w: 15, rot: -2,
       brand: 'Makebug', product: '3D-конструктор «Орхидеи»',
-      photo: 'assets/packshots/makebug.webp', // коробка Moth Orchid из Dropbox бренда
+      photo: 'assets/packshots/makebug.webp', // собранные орхидеи (правка клиента 11.11, вместо упаковки)
       text: 'Мама собирает орхидею из картона. Детали Makebug нужно только выдавить и соединить, клей и ножницы не понадобятся. Цветы похожи на настоящие по форме, окраске и деталям, а поливать их не надо.',
-      promo: 'Промокод GAME15 действует до 22 апреля 2027 года',
+      promo: 'Промокод GAME15: скидка 15% до 22 апреля',
       button: 'Выбрать цветок',
       url: 'https://ozon.ru/highlight/podborka-tovarov-5027079/?utm_campaign=vendor_org_4584_for_mom&utm_content=autumn2026&utm_medium=refferal&utm_source=NEN_game&utm_term=MB_flowers'
     },
@@ -163,7 +172,8 @@
     /* ----- Детская ----- */
     {
       id: 'alilo', room: 'kids', kind: 'brand', delta: 15,
-      sticker: 'assets/stickers/kids-bunny.webp', x: 50.5, y: 53.2, w: 11, rot: -3,
+      ad: 'Реклама, ООО «БЭЙБИ ОПТ ГРУП» (ИНН 7801623948), erid: 2W5zFJC9uzz',
+      sticker: 'assets/stickers/kids-bunny-v2.webp', x: 50.5, y: 53.2, w: 8.6, rot: -3, // форма как у настоящего Умного Зайки (правка 11.11)
       brand: 'alilo', product: 'Умный Зайка R1',
       photo: 'assets/packshots/alilo.webp', // голубой Умный Зайка R1, фото прислала Анастасия 09.11
       text: 'Младший уснул под белый шум, и мама впервые за вечер села. Умный Зайка alilo подходит детям с рождения: поёт колыбельные, рассказывает сказки, а силиконовые ушки светятся, как ночник.',
@@ -172,6 +182,7 @@
     },
     {
       id: 'abumba', room: 'kids', kind: 'brand', delta: 15,
+      ad: 'Реклама, ООО «БЭЙБИ ОПТ ГРУП» (ИНН 7801623948), erid: 2W5zFH6QStA',
       sticker: 'assets/stickers/kids-book.webp', x: 50, y: 89, w: 17, rot: 4,
       brand: 'Abumba', product: 'Говорящая книга-фингербук',
       photo: 'assets/packshots/abumba.webp', // из Dropbox бренда, фон срезан
@@ -429,7 +440,7 @@
         ${it.promo ? `<p class="promo">${esc(nbsp(it.promo))}</p>` : ''}
         ${it.disclaimer ? `<p class="disclaimer">${esc(nbsp(it.disclaimer))}</p>` : ''}
         <a class="btn" href="${it.url}" target="_blank" rel="noopener">${esc(it.button)}</a>
-        <p class="ad">Реклама. Рекламодатель ${esc(it.brand)}, erid —</p>`;
+        <p class="ad">${esc(it.ad).replace('erid: ', 'erid:&nbsp;')}</p>`;
     } else {
       // Редакционные попапы: без кнопок. Все попапы закрываются крестиком или тапом мимо
       body.innerHTML = `<p class="copy copy--last">${esc(nbsp(it.text))}</p>`;
@@ -463,7 +474,7 @@
           ${it.promo ? `<p class="shop__promo">${esc(nbsp(it.promo))}</p>` : ''}
           ${it.disclaimer ? `<p class="shop__note">${esc(nbsp(it.disclaimer))}</p>` : ''}
           <a class="btn btn--sm" href="${it.url}" target="_blank" rel="noopener">${esc(it.button)}</a>
-          <p class="ad">Реклама. Рекламодатель ${esc(it.brand)}, erid —</p>
+          <p class="ad">${esc(it.ad).replace('erid: ', 'erid:&nbsp;')}</p>
         </div>
       </article>`).join('');
     $('finalCard').innerHTML = `
