@@ -96,7 +96,7 @@
     },
     {
       id: 'bago', room: 'bedroom', kind: 'brand', delta: 15,
-      ad: 'Реклама, ООО «ХОУМ АКСЕССОРИЗ» (ИНН 7743613031), erid: 2W5zFJ7hHC6',  // ИНН как в доке клиента, у BAGO он совпадает с СМ-Клиникой — уточнить
+      ad: 'Реклама, ООО «ХОУМ АКСЕССОРИЗ» (ИНН 5001083288), erid: 2W5zFJ7hHC6',
       sticker: 'assets/stickers/bedroom-diffuser-v2.webp', x: 77, y: 50.9, w: 12, rot: 3, // кубический флакон BAGO (правка 11.11)
       brand: 'BAGO home', product: 'Диффузор «Свежий хлопок», 50 мл',
       photo: 'assets/packshots/bago.webp', // фото на белом из папки бренда (правка 11.11)
